@@ -1,4 +1,5 @@
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -6,11 +7,16 @@ body {
   margin: 0;
   padding-top: 10px;
 }
+
 p {
   margin: 0;
 }
 
-a,
+a {
+  display: block;
+  font-size: 40px;
+}
+
 .label {
   font-size: 30px;
 }
@@ -40,7 +46,14 @@ a,
 }
 
 .hero__title {
-  width: 100%;
+  width: auto;
+  /* max-width: 360px; */
+  /* width: 360px; */
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+
+  text-align: center;
 }
 
 /* ====================================== */
@@ -53,24 +66,30 @@ a,
 /* ======================================= */
 
 .container {
-  width: 480px;
+  width: 100vw;
+  max-width: 480px;
 }
 
-/* 
-@media screen and (max-width: 767px) {
-  .container {
-    max-width: 480px;
-  }
-} */
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
+@media screen and (max-width: 479px) {
+  a,
+  .label,
+  .hero__title {
+    /* 30px * (100vw/480px) */
+    font-size: 6.25vw;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media (min-width: 768px) {
   .container {
-    width: 1200px;
+    /* width: auto; */
+    max-width: 768px;
+    /* width: 768px; */
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    /* width: 1200px; */
   }
 }
